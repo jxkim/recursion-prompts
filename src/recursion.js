@@ -50,6 +50,16 @@ var arraySum = function(array) {
 
 // 4. Check if a number is even.
 var isEven = function(n) {
+	// base case
+	// if n = 0, number is even
+	if (n === 0) {
+		return true;
+	// if n = 1 or -1, number is odd
+	} else if (n === 1 | n === -1) {
+		return false;
+	} else {
+	// recursion
+	}
 };
 
 // 5. Sum all integers below a given integer.
