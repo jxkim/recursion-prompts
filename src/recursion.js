@@ -93,6 +93,21 @@ var sumBelow = function(n) {
 // 6. Get the integers within a range (x, y).
 // range(2,9); // [3,4,5,6,7,8]
 var range = function(x, y) {
+	// base case
+	// if difference between 2 numbers is less than 2, return empty array
+	if (Math.abs(x - y) < 2) {
+		return [];
+	// recursive case
+	} else {
+    // consider ascending and descending ranges
+    if (x < y) {
+    	var num = x + 1
+    	return [num].concat(range(x + 1, y));
+    } else {
+    	var num = x - 1
+    	return [num].concat(range(x - 1, y));
+    }
+	}
 };
 
 // 7. Compute the exponent of a number.
