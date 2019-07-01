@@ -12,7 +12,7 @@ var factorial = function(n) {
 	if (n < 0) {
 		return null;
 	}
-	// when factorial of 0 is 1
+	// factorial of 0 is 1
 	else if (n === 0) {
 		return 1;
 	}
@@ -141,6 +141,22 @@ var exponent = function(base, exp) {
 // powerOfTwo(16); // true
 // powerOfTwo(10); // false
 var powerOfTwo = function(n) {
+	// base case
+	// if n = 0, number is not power of 2
+	if (n === 0) {
+		return false;
+	} else if (n % 2 === 1) {
+		// number is power of 2 if n is 1
+		if (n === 1) {
+			return true;
+		// if n is any other odd number, number is not power of 2
+		} else {
+			return false;
+		}
+  // recursive case
+  } else {
+  	return powerOfTwo(n / 2);
+  }
 };
 
 // 9. Write a function that reverses a string.
