@@ -73,6 +73,21 @@ var isEven = function(n) {
 // sumBelow(10); // 45
 // sumBelow(7); // 21
 var sumBelow = function(n) {
+	// base case
+	// when n = 0, 1 or -1, return 0
+	if (n === 0) {
+		return 0;
+	} else if (Math.abs(n) === 1) {
+		return 0;
+	// recursive case
+	} else {
+    // consider both positive/negative inputs
+    if (n > 0) {
+    	return (n - 1) + sumBelow(n - 1);
+    } else {
+    	return (n + 1) + sumBelow(n + 1);
+    }
+	}
 };
 
 // 6. Get the integers within a range (x, y).
