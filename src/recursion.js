@@ -55,10 +55,17 @@ var isEven = function(n) {
 	if (n === 0) {
 		return true;
 	// if n = 1 or -1, number is odd
-	} else if (n === 1 | n === -1) {
+	} else if (n === 1 || n === -1) {
 		return false;
-	} else {
 	// recursion
+	} else {
+	  // if n < 0, add 2 and call isEven
+	  if (n < 0) {
+	  	return isEven(n + 2);
+	  // if n > 0, subtract 2 and call isEven
+	  } else {
+	    return isEven(n - 2);
+		}
 	}
 };
 
