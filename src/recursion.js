@@ -9,9 +9,18 @@
 var factorial = function(n) {
 	// base case
 	// when n < 0, cannot calculate factorial
-	// when n = 0, factorial is 1
+	if (n < 0) {
+		return null;
+	}
+	// when factorial of 0 is 1
+	else if (n === 0) {
+		return 1;
+	}
 	// recursive case
 	// multiply current n by n - 1
+	else {
+		return n * factorial(n - 1);
+	}
 };
 
 // 2. Compute the sum of an array of integers.
