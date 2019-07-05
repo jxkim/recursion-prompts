@@ -259,9 +259,10 @@ var compareStr = function(str1, str2) {
 // occupies an index of the array.
 var createArray = function(str) {
 	var array = [];
-	//base case
+	// base case
 	if (str.length === 0) {
 		return array;
+	// recursive case
 	} else {
 		array.push(str[0])
 		return array.concat(createArray(str.slice(1)));
@@ -270,6 +271,17 @@ var createArray = function(str) {
 
 // 17. Reverse the order of an array
 var reverseArr = function(array) {
+	var reversedArray = [];
+	// base case
+	// if array is empty or has 1 element, return array
+	if (array.length === 0 || array.length === 1) {
+		return array;
+	// recursive case
+	} else {
+		// add last element of array to new array
+		reversedArray.push(array[array.length -1]);
+		return reversedArray.concat(reverseArr(array.slice(0, array.length - 1)));
+	}
 };
 
 // 18. Create a new array with a given value and length.
